@@ -7,6 +7,10 @@ x <- paste(dates, times)
 data <- cbind(filteredData, strptime(x, "%d/%m/%Y %H:%M:%S"))
 colnames(data)[ncol(data)] <- "DateTime"
 
+
+## for some reason, the graph shows week days in portuguese (which is my native language)
+## qui = Thu, sex = Fri, sáb = Sat
+
 png(file="plot4.png",height=480,width=480)
 par(mfrow=c(2,2))
 

@@ -7,6 +7,10 @@ x <- paste(dates, times)
 data <- cbind(filteredData, strptime(x, "%d/%m/%Y %H:%M:%S"))
 colnames(data)[ncol(data)] <- "DateTime"
 
+
+## for some reason, the graph shows week days in portuguese (which is my native language)
+## qui = Thu, sex = Fri, sáb = Sat
+
 png(file="plot3.png",height=480,width=480)
 plot(data$DateTime, data$Sub_metering_1, type="n", ylab="Energy sub metering", xlab="")
 with(data, lines(as.numeric(data$Sub_metering_1)~data$DateTime, col="black"))
