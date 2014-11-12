@@ -7,10 +7,6 @@ x <- paste(dates, times)
 data <- cbind(filteredData, strptime(x, "%d/%m/%Y %H:%M:%S"))
 colnames(data)[ncol(data)] <- "DateTime"
 
-
-## for some reason, the graph shows week days in portuguese (which is my native language)
-## qui = Thu, sex = Fri, sáb = Sat
-
 png(file="plot4.png",height=480,width=480)
 par(mfrow=c(2,2))
 
@@ -31,6 +27,6 @@ legend("topright", lty=c(1,1,1), col = c("black", "red", "blue"), legend = c("Su
 
 ## Graph 4
 plot(data$DateTime, data$Global_reactive_power, type="n", xlab="")
-lines(as.numeric(data$Global_reactive_power)~data$DateTime, col="black", xlab="datetime")
+lines(as.numeric(data$Global_reactive_power)~data$DateTime, col="black", xlab="datetime", ylab="Global_reactive_power")
 
 dev.off()
