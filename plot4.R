@@ -26,7 +26,7 @@ with(data, lines(as.numeric(data$Sub_metering_3)~data$DateTime, col="blue"))
 legend("topright", lty=c(1,1,1), col = c("black", "red", "blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), bty="n")
 
 ## Graph 4
-plot(data$DateTime, data$Global_reactive_power, type="n", xlab="")
+plot(data$DateTime, data$Global_reactive_power, type="n", xlab="", ylab="Global_reactive_power")
 lines(as.numeric(data$Global_reactive_power)~data$DateTime, col="black", xlab="datetime", ylab="Global_reactive_power")
 
 dev.off()
